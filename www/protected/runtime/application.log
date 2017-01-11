@@ -1,0 +1,13 @@
+2017/01/10 22:05:45 [error] [php] file_put_contents(Z:\home\one\www\protected\runtime/gii-1.1.17/ModelCode.php) [<a href='function.file-put-contents'>function.file-put-contents</a>]: failed to open stream: Permission denied (Z:\home\one\www\framework\gii\CCodeModel.php:388)
+Stack trace:
+#0 Z:\home\one\www\framework\gii\CCodeGenerator.php(63): ModelGenerator->prepare()
+#1 Z:\home\one\www\framework\web\actions\CInlineAction.php(49): ModelGenerator->actionIndex()
+#2 Z:\home\one\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 Z:\home\one\www\framework\web\CController.php(286): ModelGenerator->runAction()
+#4 Z:\home\one\www\framework\web\CController.php(265): ModelGenerator->runActionWithFilters()
+#5 Z:\home\one\www\framework\web\CWebApplication.php(282): ModelGenerator->run()
+#6 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 Z:\home\one\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/gii/model/index
+in Z:\home\one\www\index.php (13)
