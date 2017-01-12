@@ -7,7 +7,8 @@
  * @property integer $id
  * @property string $title
  * @property string $text
- */
+ * @property array $categories
+*/
 class News extends CActiveRecord
 {
 	/**
@@ -42,6 +43,9 @@ class News extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'categories'=>array(self::MANY_MANY, 'Category',
+                'b_news_to_category(news_id, category_id)'),
+            'comments'=>array(self::HAS_MANY, 'Comment', 'news_id'),
 		);
 	}
 
@@ -54,6 +58,7 @@ class News extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Title',
 			'text' => 'Text',
+            'categories' => 'Categories'
 		);
 	}
 

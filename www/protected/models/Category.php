@@ -41,6 +41,8 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'news'=>array(self::MANY_MANY, 'News',
+                'b_news_to_category(category_id, news_id)'),
 		);
 	}
 
@@ -91,4 +93,19 @@ class Category extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    /**
+     * Returns all categories.
+     * @return array
+     */
+    public static function all()
+    {
+        $models = self::model()->findAll();
+
+        $categories = array();
+        foreach ($models as $model){
+            $categories[$model->id] = $model->title;
+        }
+        return $categories;
+    }
 }

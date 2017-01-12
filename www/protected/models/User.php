@@ -46,6 +46,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'comments'=>array(self::HAS_MANY, 'Comment', 'user_id'),
 		);
 	}
 
@@ -102,4 +103,10 @@ class User extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function beforeSave()
+    {
+        $this->password = md5($this->password);
+        return parent::beforeSave();
+    }
 }

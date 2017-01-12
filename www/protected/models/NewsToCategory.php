@@ -41,6 +41,8 @@ class NewsToCategory extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'categories'=>array(self::BELONGS_TO, 'Category', 'category_id'),
+            'news'=>array(self::BELONGS_TO, 'News', 'news_id'),
 		);
 	}
 
