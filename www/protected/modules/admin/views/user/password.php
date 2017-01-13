@@ -13,7 +13,7 @@ $this->menu=array(
 
 <?php
     echo CHtml::form();
-    echo CHtml::textField('password');
+    echo CHtml::passwordField('password');
     echo CHtml::submitButton('Update password');
     echo CHtml::endForm();
 ?>

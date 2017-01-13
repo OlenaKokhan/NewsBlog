@@ -106,18 +106,19 @@ class SiteController extends Controller
     public function actionRegistration()
     {
         $model=new User;
-
+        $model->scenario = 'registration';
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if(isset($_POST['User']))
         {
             $model->attributes=$_POST['User'];
-            if($model->save())
-                $this->redirect(array('view','id'=>$model->id));
+            if($model->save()){
+                Yii::app()->user->setFlash('registration','Thank you for registration. Please, sign in with your login and password.');
+            }
         }
 
-        $this->render('create',array(
+        $this->render('registration',array(
             'model'=>$model,
         ));
     }
