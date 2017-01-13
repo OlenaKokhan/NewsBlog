@@ -845,3 +845,194 @@ Stack trace:
 REQUEST_URI=/admin/user
 HTTP_REFERER=http://one/gii/crud/index
 ---
+2017/01/12 23:04:26 [error] [exception.CException] exception 'CException' with message 'CommentController cannot find the requested view "index".' in Z:\home\one\www\framework\web\CController.php:878
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#1 Z:\home\one\www\protected\modules\admin\controllers\CommentController.php(128): CController->render('index', Array)
+#2 Z:\home\one\www\framework\web\actions\CInlineAction.php(49): CommentController->actionIndex()
+#3 Z:\home\one\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 Z:\home\one\www\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 Z:\home\one\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 Z:\home\one\www\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 Z:\home\one\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\home\one\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\home\one\www\framework\web\CController.php(291): CFilterChain->run()
+#10 Z:\home\one\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('')
+#12 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/comment')
+#13 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 Z:\home\one\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/admin/comment
+HTTP_REFERER=http://one/gii/crud/index
+---
+2017/01/12 23:41:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/comments".' in Z:\home\one\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/comments')
+#1 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 Z:\home\one\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/comments
+HTTP_REFERER=http://one/admin/comment/update/id/1
+---
+2017/01/12 23:41:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/comments".' in Z:\home\one\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/comments')
+#1 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 Z:\home\one\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/comments
+HTTP_REFERER=http://one/admin/comment/update/id/1
+---
+2017/01/12 23:41:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/comments".' in Z:\home\one\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/comments')
+#1 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 Z:\home\one\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/comments
+HTTP_REFERER=http://one/admin/comment/update/id/1
+---
+2017/01/13 00:39:54 [error] [php] Invalid argument supplied for foreach() (Z:\home\one\www\framework\zii\widgets\CMenu.php:265)
+Stack trace:
+#0 Z:\home\one\www\framework\web\CBaseController.php(147): CMenu->init()
+#1 Z:\home\one\www\framework\web\CBaseController.php(180): SiteController->createWidget()
+#2 Z:\home\one\www\protected\views\layouts\column2.php(12): SiteController->widget()
+#3 Z:\home\one\www\framework\web\CBaseController.php(126): require()
+#4 Z:\home\one\www\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#5 Z:\home\one\www\framework\web\CController.php(784): SiteController->renderFile()
+#6 Z:\home\one\www\protected\controllers\SiteController.php(32): SiteController->render()
+#7 Z:\home\one\www\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 Z:\home\one\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 Z:\home\one\www\framework\web\CController.php(286): SiteController->runAction()
+#10 Z:\home\one\www\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 Z:\home\one\www\framework\web\CWebApplication.php(282): SiteController->run()
+#12 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 Z:\home\one\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in Z:\home\one\www\protected\views\layouts\column2.php (12)
+in Z:\home\one\www\protected\controllers\SiteController.php (32)
+in Z:\home\one\www\index.php (13)
+2017/01/13 00:42:44 [error] [php] Invalid argument supplied for foreach() (Z:\home\one\www\framework\zii\widgets\CMenu.php:265)
+Stack trace:
+#0 Z:\home\one\www\framework\web\CBaseController.php(147): CMenu->init()
+#1 Z:\home\one\www\framework\web\CBaseController.php(180): SiteController->createWidget()
+#2 Z:\home\one\www\protected\views\layouts\column2.php(12): SiteController->widget()
+#3 Z:\home\one\www\framework\web\CBaseController.php(126): require()
+#4 Z:\home\one\www\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#5 Z:\home\one\www\framework\web\CController.php(784): SiteController->renderFile()
+#6 Z:\home\one\www\protected\controllers\SiteController.php(32): SiteController->render()
+#7 Z:\home\one\www\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 Z:\home\one\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 Z:\home\one\www\framework\web\CController.php(286): SiteController->runAction()
+#10 Z:\home\one\www\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#11 Z:\home\one\www\framework\web\CWebApplication.php(282): SiteController->run()
+#12 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 Z:\home\one\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in Z:\home\one\www\protected\views\layouts\column2.php (12)
+in Z:\home\one\www\protected\controllers\SiteController.php (32)
+in Z:\home\one\www\index.php (13)
+2017/01/13 01:47:30 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in Z:\home\one\www\framework\web\CController.php:336
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 Z:\home\one\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 Z:\home\one\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('index')
+#4 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/index/id1')
+#5 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 Z:\home\one\www\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/news/index/id1
+HTTP_REFERER=http://one/site/index
+---
+2017/01/13 01:49:09 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in Z:\home\one\www\framework\web\CController.php:336
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 Z:\home\one\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 Z:\home\one\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('index')
+#4 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/index/id1')
+#5 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 Z:\home\one\www\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/news/index/id1
+HTTP_REFERER=http://one/site/index
+---
+2017/01/13 02:02:22 [error] [php] array_values() expects parameter 1 to be array, string given (Z:\home\one\www\protected\views\site\index.php:27)
+Stack trace:
+#0 Z:\home\one\www\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 Z:\home\one\www\framework\web\CController.php(869): SiteController->renderFile()
+#2 Z:\home\one\www\framework\web\CController.php(782): SiteController->renderPartial()
+#3 Z:\home\one\www\protected\controllers\SiteController.php(32): SiteController->render()
+#4 Z:\home\one\www\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 Z:\home\one\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 Z:\home\one\www\framework\web\CController.php(286): SiteController->runAction()
+#7 Z:\home\one\www\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 Z:\home\one\www\framework\web\CWebApplication.php(282): SiteController->run()
+#9 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 Z:\home\one\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/site/index
+in Z:\home\one\www\protected\views\site\index.php (27)
+in Z:\home\one\www\protected\controllers\SiteController.php (32)
+in Z:\home\one\www\index.php (13)
+2017/01/13 02:24:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in Z:\home\one\www\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(270): CController->missingAction('view')
+#1 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('view')
+#2 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/view')
+#3 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 Z:\home\one\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/news/1
+HTTP_REFERER=http://one/news/index/id/1
+---
+2017/01/13 02:25:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in Z:\home\one\www\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(270): CController->missingAction('view')
+#1 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('view')
+#2 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/view')
+#3 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 Z:\home\one\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/news/1
+HTTP_REFERER=http://one/news/index/id/1
+---
+2017/01/13 02:27:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in Z:\home\one\www\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(270): CController->missingAction('view')
+#1 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('view')
+#2 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/view')
+#3 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 Z:\home\one\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/news/1
+HTTP_REFERER=http://one/news/index/id/1
+---
+2017/01/13 02:27:32 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in Z:\home\one\www\framework\web\CController.php:336
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 Z:\home\one\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 Z:\home\one\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('')
+#4 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news')
+#5 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 Z:\home\one\www\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/news/
+---
+2017/01/13 02:27:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in Z:\home\one\www\framework\web\CController.php:336
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 Z:\home\one\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 Z:\home\one\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('')
+#4 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news')
+#5 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 Z:\home\one\www\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/news/
+---

@@ -99,4 +99,13 @@ class News extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    /**
+     * Returns all news.
+     * @return array
+     */
+    public static function all()
+    {
+        return CHtml::listData(self::model()->findAll(), 'id', 'title');
+    }
 }

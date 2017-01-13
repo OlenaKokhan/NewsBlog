@@ -104,6 +104,15 @@ class User extends CActiveRecord
 		return parent::model($className);
 	}
 
+    /**
+     * Returns all users.
+     * @return array
+     */
+    public static function all()
+    {
+        return CHtml::listData(self::model()->findAll(), 'id', 'username');
+    }
+
     public function beforeSave()
     {
         $this->password = md5($this->password);

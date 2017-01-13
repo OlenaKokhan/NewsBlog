@@ -32,6 +32,7 @@
 				array('label'=>'News', 'url'=>array('/admin/news')),
                 array('label'=>'Categories', 'url'=>array('/admin/category')),
                 array('label'=>'Users', 'url'=>array('/admin/user')),
+                array('label'=>'Comments', 'url'=>array('/admin/comment')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

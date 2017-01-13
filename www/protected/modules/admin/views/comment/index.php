@@ -1,10 +1,6 @@
 <?php
-/* @var $this NewsController */
-/* @var $model News */
-
-$this->menu=array(
-	array('label'=>'Create News', 'url'=>array('create')),
-);
+/* @var $this CommentController */
+/* @var $model Comment */
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -12,7 +8,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#news-grid').yiiGridView('update', {
+	$('#comment-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -20,7 +16,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage News</h1>
+<h1>Manage Comments</h1>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
@@ -30,18 +26,29 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'news-grid',
+	'id'=>'comment-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-        'id'=>array(
+		'id'=>array(
             'name'=>'id',
             'headerHtmlOptions'=>array('width'=>30),
         ),
-		'title',
 		'text',
+		'user_id'=>array(
+            'name'=>'user_id',
+            'value'=>'$data->user->username',
+            'filter'=>User::all(),
+        ),
+        'news_id'=>array(
+            'name'=>'news_id',
+            'value'=>'$data->news->title',
+            'filter'=>News::all(),
+        ),
 		array(
 			'class'=>'CButtonColumn',
+            'updateButtonOptions'=>array('style'=>'display:none'),
+            'viewButtonOptions'=>array('style'=>'display:none'),
 		),
 	),
 )); ?>

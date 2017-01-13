@@ -100,11 +100,16 @@ class Category extends CActiveRecord
      */
     public static function all()
     {
+        return CHtml::listData(self::model()->findAll(), 'id', 'title');
+    }
+
+    public static function menu()
+    {
         $models = self::model()->findAll();
 
         $categories = array();
         foreach ($models as $model){
-            $categories[$model->id] = $model->title;
+            $categories[$model->id] = array('label'=>$model->title, 'url'=>'/news/index/id/'.$model->id);
         }
         return $categories;
     }
