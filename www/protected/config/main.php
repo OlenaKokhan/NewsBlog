@@ -31,9 +31,15 @@ return array(
 	// application components
 	'components'=>array(
 
+        'authManager'=>array(
+            'class'=>'PhpAuthManager',
+            'defaultRoles'=> array('guest'),
+        ),
+
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+            'class' => 'WebUser',
 		),
 
 		'urlManager'=>array(
