@@ -27,7 +27,7 @@ class Comment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('text, user_id, news_id', 'required'),
+			array('text', 'required'),
 			array('user_id, news_id', 'numerical', 'integerOnly'=>true),
 			array('text', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -56,8 +56,8 @@ class Comment extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'text' => 'Text',
-			'user_id' => 'User',
+			'text' => 'Comment',
+			'user_id' => 'Username',
 			'news_id' => 'News',
 		);
 	}
@@ -76,10 +76,7 @@ class Comment extends CActiveRecord
 	 */
 	public function search()
 	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
-
-		$criteria=new CDbCriteria;
-
+        $criteria=new CDbCriteria;
 		$criteria->compare('id',$this->id);
 		$criteria->compare('text',$this->text,true);
 		$criteria->compare('user_id',$this->user_id);
@@ -100,4 +97,25 @@ class Comment extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function beforeSave()
+    {
+        if ($this->isNewRecord){
+            if (!Yii::app()->user->isGuest){
+                $this->user_id=Yii::app()->user->id;
+            }
+        }
+        return parent::beforeSave();
+    }
+
+    public static function allByNewsId($news_id)
+    {
+        $criteria=new CDbCriteria;
+        $criteria->compare('news_id',$news_id);
+        $criteria->order = 'id DESC';
+
+        return new CActiveDataProvider('Comment', array(
+            'criteria'=>$criteria,
+        ));
+    }
 }

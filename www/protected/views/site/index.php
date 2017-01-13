@@ -8,9 +8,11 @@ $this->pageTitle=Yii::app()->name;
 
 <?php
 $models = News::all();
+
 if (!$models){
     echo "Empty list";
 }
+
 shuffle($models);
 foreach ($models as $model){
     //todo return text of news

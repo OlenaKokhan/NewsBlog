@@ -2,8 +2,8 @@
 /* @var $this DefaultController */
 
 ?>
-<h1><?php echo $this->uniqueId . '/' . $this->action->id; ?></h1>
+<h1>Welcome to admin panel.</h1>
 
 <p>
-    News
+    Hello! You can manage resources here.
 </p>

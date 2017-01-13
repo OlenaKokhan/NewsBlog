@@ -35,7 +35,7 @@ class User extends CActiveRecord
 			array('username, email, password', 'required'),
 			array('role', 'numerical', 'integerOnly'=>true),
 			array('username, password', 'length', 'max'=>50),
-			array('email', 'length', 'max'=>60),
+            array('email', 'length', 'max'=>60),
             array('email', 'email'),
             array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'registration'),
 			array('id, username, email, role', 'safe', 'on'=>'search'),
