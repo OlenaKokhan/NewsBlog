@@ -5,11 +5,11 @@
 
 <div class="view">
 
-    <?php echo "<h2>".CHtml::encode($data->title)."</h2>" ?>
+    <?php echo "<h2>".CHtml::link("$data->title", array('/news/view', 'id'=>$data->id))."</h2>" ?>
     <p>
         <?php
         echo CHtml::encode(substr($data->text, 0, 400))."...";
-        echo CHtml::link("Read...</p>", array('view', 'id'=>$data->id));
+        echo CHtml::link("Read...</p>", array('/news/view', 'id'=>$data->id));
         ?>
     </p>
 

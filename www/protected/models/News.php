@@ -24,13 +24,9 @@ class News extends CActiveRecord
 	 */
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
 		return array(
 			array('title, text', 'required'),
 			array('title', 'length', 'max'=>255),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
 			array('id, title, text', 'safe', 'on'=>'search'),
 		);
 	}
@@ -120,9 +116,9 @@ class News extends CActiveRecord
         ));
     }
 
-    public static function findAllByCategoryId($id)
+    public static function findAllByCategoryId($category_id)
     {
-        $newsArray = NewsToCategory::newsArray($id);
+        $newsArray = NewsToCategory::newsArray($category_id);
         $news = array();
         foreach ($newsArray as $item){
             $news[] = $item->news_id;

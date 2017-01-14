@@ -11,11 +11,17 @@ if (!$model){
 
 echo "<h1>".$model->title."</h1>";
 echo "<h4>".$model->text."</h4>";
-/*
-foreach ($model->сategories as $category){
-    echo "<p>".$category->title."</p>";
+
+?>
+
+<br/><h3>Categories</h3>
+
+<?php
+$categories = Category::findAllByNewsId($model->id);
+foreach ($categories as $category){
+    echo "<span>".$category->title."</span></br>";
 }
-*/
+
 ?>
 <?php
     if (!Yii::app()->user->isGuest)

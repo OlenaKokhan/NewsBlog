@@ -113,4 +113,15 @@ class Category extends CActiveRecord
         }
         return $categories;
     }
+
+    public static function findAllByNewsId($news_id)
+    {
+        $categoryArray = NewsToCategory::categoryArray($news_id);
+        $category = array();
+        foreach ($categoryArray as $item){
+            $category_id = $item->category_id;
+            $category[] = self::model()->findByPk($category_id);
+        }
+        return $category;
+    }
 }

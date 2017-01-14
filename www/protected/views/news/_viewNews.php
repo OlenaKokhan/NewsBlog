@@ -5,7 +5,7 @@
 
 <div class="view">
 
-    <?php echo "<h2>".CHtml::encode($data->title)."</h2>" ?>
+    <?php echo "<h2>".CHtml::link("$data->title", array('view', 'id'=>$data->id))."</h2>" ?>
     <p>
         <?php
             echo CHtml::encode(substr($data->text, 0, 400))."...";

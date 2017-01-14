@@ -95,4 +95,10 @@ class NewsToCategory extends CActiveRecord
         $categories = self::model()->findAllByAttributes(array('category_id'=>$category_id));
         return $categories;
     }
+
+    public static function categoryArray($news_id)
+    {
+        $news = self::model()->findAllByAttributes(array('news_id'=>$news_id));
+        return $news;
+    }
 }
