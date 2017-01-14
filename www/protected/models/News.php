@@ -109,14 +109,15 @@ class News extends CActiveRecord
         return CHtml::listData(self::model()->findAll(), 'id', 'title');
     }
 
-    public static function lastNews($news_id)
+    public static function allNews()
     {
         $criteria=new CDbCriteria;
-        $criteria->compare('id',$news_id);
-        $criteria->order = 'id DESC';
-
-        return new CActiveDataProvider('Comment', array(
+        return new CActiveDataProvider('News', array(
             'criteria'=>$criteria,
+            'pagination'=>array(
+                'pageSize'=>2
+            )
         ));
     }
+
 }

@@ -6,16 +6,7 @@ $this->pageTitle=Yii::app()->name;
 
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<?php
-$models = News::all();
-
-if (!$models){
-    echo "Empty list";
-}
-
-shuffle($models);
-foreach ($models as $model){
-    //todo return text of news
-    echo "<h5>".$model."</h5>";
-}
-?>
+<?php $this->widget('zii.widgets.CListView', array(
+    'dataProvider'=>News::allNews(),
+    'itemView'=>'_viewNews',
+)); ?>

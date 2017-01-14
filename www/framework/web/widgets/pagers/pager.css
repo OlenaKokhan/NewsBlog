@@ -55,12 +55,3 @@ ul.yiiPager .hidden a
 	border:solid 1px #DEDEDE;
 	color:#888888;
 }
-
-/**
- * Hide first and last buttons by default.
- */
-ul.yiiPager .first,
-ul.yiiPager .last
-{
-	display:none;
-}
