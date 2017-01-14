@@ -71,13 +71,9 @@ class NewsToCategory extends CActiveRecord
 	 */
 	public function search()
 	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
-
 		$criteria=new CDbCriteria;
-
 		$criteria->compare('news_id',$this->news_id);
 		$criteria->compare('category_id',$this->category_id);
-
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -93,4 +89,10 @@ class NewsToCategory extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public static function newsArray($category_id)
+    {
+        $categories = self::model()->findAllByAttributes(array('category_id'=>$category_id));
+        return $categories;
+    }
 }

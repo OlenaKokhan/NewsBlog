@@ -5,14 +5,8 @@ $this->breadcrumbs=array(
 	$category->title,
 );
 ?>
-<?php
-    if (!News::allNews()){
-        echo "Empty list";
-    }
-?>
 
 <?php $this->widget('zii.widgets.CListView', array(
-    'dataProvider'=>News::allNews(),
+    'dataProvider'=>News::findAllByCategoryId($category->id),
     'itemView'=>'_viewNews',
 )); ?>
-

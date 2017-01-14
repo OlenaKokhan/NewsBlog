@@ -7,10 +7,10 @@
  * @property integer $id
  * @property string $title
  * @property string $text
- * @property array $categories
 */
 class News extends CActiveRecord
 {
+    public $categories;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -111,7 +111,7 @@ class News extends CActiveRecord
 
     public static function allNews()
     {
-        $criteria=new CDbCriteria;
+        $criteria = new CDbCriteria;
         return new CActiveDataProvider('News', array(
             'criteria'=>$criteria,
             'pagination'=>array(
@@ -120,4 +120,20 @@ class News extends CActiveRecord
         ));
     }
 
+    public static function findAllByCategoryId($id)
+    {
+        $newsArray = NewsToCategory::newsArray($id);
+        $news = array();
+        foreach ($newsArray as $item){
+            $news[] = $item->news_id;
+        }
+        $criteria = new CDbCriteria;
+        $criteria->addInCondition('id', $news);
+        return new CActiveDataProvider('News', array(
+            'criteria'=>$criteria,
+            'pagination'=>array(
+                'pageSize'=>2
+            )
+        ));
+    }
 }

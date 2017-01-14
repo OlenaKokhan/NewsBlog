@@ -4,7 +4,7 @@ class NewsController extends Controller
 {
 	public function actionIndex($id)
 	{
-	    $models = News::model()->findAll();//todo add select where
+	    $models = News::findAllByCategoryId($id);
         $category = Category::model()->findByPk($id);
 		$this->render('index', array('models'=>$models, 'category'=>$category));
 	}
@@ -24,4 +24,5 @@ class NewsController extends Controller
         }
         $this->render('view', array('model'=>$model, 'newComment'=>$newComment));
     }
+
 }
