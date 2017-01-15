@@ -22,8 +22,7 @@
     <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-<?php
-?>
+
 <script>
     $(document).on("click", ".submit", function(){
         $.ajax({

@@ -40,6 +40,7 @@
         <?php //todo checkbox for category or smth else
             $newsToCategory = new NewsToCategory();
             $newsToCategory->news_id = $model->id;
+
             echo $form->labelEx($newsToCategory,'category_id');
             echo $form->checkBoxList($newsToCategory, 'category_id', Category::all())?>
         <?php echo $form->error($newsToCategory,'category_id'); ?>

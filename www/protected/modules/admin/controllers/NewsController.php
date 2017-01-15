@@ -50,9 +50,6 @@ class NewsController extends Controller
 	{
 		$model=new News;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['News']))
 		{
 			$model->attributes=$_POST['News'];
@@ -74,9 +71,6 @@ class NewsController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['News']))
 		{
 			$model->attributes=$_POST['News'];
@@ -97,8 +91,6 @@ class NewsController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
@@ -109,7 +101,7 @@ class NewsController extends Controller
 	public function actionIndex()
 	{
 		$model=new News('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();
 		if(isset($_GET['News']))
 			$model->attributes=$_GET['News'];
 
