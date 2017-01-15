@@ -25,4 +25,8 @@ class NewsController extends Controller
         $this->render('view', array('model'=>$model, 'newComment'=>$newComment));
     }
 
+    public function actionUpdateComments($data)
+    {
+        $this->renderPartial('_viewComment', $data, false, true);
+    }
 }

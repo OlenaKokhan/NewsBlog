@@ -21,8 +21,8 @@ $categories = Category::findAllByNewsId($model->id);
 foreach ($categories as $category){
     echo "<span>".$category->title."</span></br>";
 }
-
 ?>
+<br/>
 <?php
     if (!Yii::app()->user->isGuest)
         echo $this->renderPartial('newComment', array('model'=>$newComment));

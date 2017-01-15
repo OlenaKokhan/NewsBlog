@@ -1708,3 +1708,185 @@ Stack trace:
 REQUEST_URI=/site/1
 HTTP_REFERER=http://one/site/index
 ---
+2017/01/15 00:40:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/931fe5b1/contents.css".' in Z:\home\one\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/931fe5b1...')
+#1 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 Z:\home\one\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/931fe5b1/contents.css
+---
+2017/01/15 00:47:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/931fe5b1/contents.css".' in Z:\home\one\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/931fe5b1...')
+#1 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 Z:\home\one\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/931fe5b1/contents.css
+---
+2017/01/15 01:24:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "news".' in Z:\home\one\www\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(270): CController->missingAction('news')
+#1 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('news')
+#2 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/news/updat...')
+#3 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 Z:\home\one\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/news/news/updateComments
+HTTP_REFERER=http://one/news/1
+---
+2017/01/15 01:25:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "updateComments".' in Z:\home\one\www\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(270): CController->missingAction('updateComments')
+#1 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('updateComments')
+#2 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/updateComm...')
+#3 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 Z:\home\one\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/news/updateComments
+HTTP_REFERER=http://one/news/1
+---
+2017/01/15 01:26:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "updatecomments".' in Z:\home\one\www\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(270): CController->missingAction('updatecomments')
+#1 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('updatecomments')
+#2 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/updatecomm...')
+#3 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 Z:\home\one\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/news/updatecomments
+HTTP_REFERER=http://one/news/6
+---
+2017/01/15 01:28:46 [error] [exception.CException] exception 'CException' with message 'Property "NewsController.createUrl" is not defined.' in Z:\home\one\www\framework\base\CComponent.php:130
+Stack trace:
+#0 Z:\home\one\www\protected\views\news\newComment.php(31): CComponent->__get('createUrl')
+#1 Z:\home\one\www\framework\web\CBaseController.php(126): require('Z:\home\one\www...')
+#2 Z:\home\one\www\framework\web\CBaseController.php(95): CBaseController->renderInternal('Z:\home\one\www...', Array, true)
+#3 Z:\home\one\www\framework\web\CController.php(869): CBaseController->renderFile('Z:\home\one\www...', Array, true)
+#4 Z:\home\one\www\protected\views\news\view.php(28): CController->renderPartial('newComment', Array)
+#5 Z:\home\one\www\framework\web\CBaseController.php(126): require('Z:\home\one\www...')
+#6 Z:\home\one\www\framework\web\CBaseController.php(95): CBaseController->renderInternal('Z:\home\one\www...', Array, true)
+#7 Z:\home\one\www\framework\web\CController.php(869): CBaseController->renderFile('Z:\home\one\www...', Array, true)
+#8 Z:\home\one\www\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#9 Z:\home\one\www\protected\controllers\NewsController.php(25): CController->render('view', Array)
+#10 [internal function]: NewsController->actionView('6')
+#11 Z:\home\one\www\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(NewsController), Array)
+#12 Z:\home\one\www\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(NewsController), Object(ReflectionMethod), Array)
+#13 Z:\home\one\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 Z:\home\one\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 Z:\home\one\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('view')
+#17 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/view')
+#18 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 Z:\home\one\www\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/news/6
+HTTP_REFERER=http://one/news/index/id/1
+---
+2017/01/15 01:30:21 [error] [php] strpos() expects parameter 1 to be string, array given (Z:\home\one\www\framework\web\CController.php:963)
+Stack trace:
+#0 Z:\home\one\www\framework\web\CBaseController.php(126): require()
+#1 Z:\home\one\www\framework\web\CBaseController.php(95): NewsController->renderInternal()
+#2 Z:\home\one\www\framework\web\CController.php(869): NewsController->renderFile()
+#3 Z:\home\one\www\protected\views\news\view.php(28): NewsController->renderPartial()
+#4 Z:\home\one\www\framework\web\CBaseController.php(126): require()
+#5 Z:\home\one\www\framework\web\CBaseController.php(95): NewsController->renderInternal()
+#6 Z:\home\one\www\framework\web\CController.php(869): NewsController->renderFile()
+#7 Z:\home\one\www\framework\web\CController.php(782): NewsController->renderPartial()
+#8 Z:\home\one\www\protected\controllers\NewsController.php(25): NewsController->render()
+#9 unknown(0): NewsController->actionView()
+#10 Z:\home\one\www\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#11 Z:\home\one\www\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#12 Z:\home\one\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 Z:\home\one\www\framework\web\CController.php(286): NewsController->runAction()
+#14 Z:\home\one\www\framework\web\CController.php(265): NewsController->runActionWithFilters()
+#15 Z:\home\one\www\framework\web\CWebApplication.php(282): NewsController->run()
+#16 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 Z:\home\one\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/news/6
+in Z:\home\one\www\protected\views\news\newComment.php (31)
+in Z:\home\one\www\protected\views\news\view.php (28)
+in Z:\home\one\www\protected\controllers\NewsController.php (25)
+2017/01/15 01:31:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "updateComments".' in Z:\home\one\www\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(270): CController->missingAction('updateComments')
+#1 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('updateComments')
+#2 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/updateComm...')
+#3 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 Z:\home\one\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/news/updateComments
+HTTP_REFERER=http://one/news/6
+---
+2017/01/15 11:19:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in Z:\home\one\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 Z:\home\one\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://one/news/6
+---
+2017/01/15 11:34:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "updateComments".' in Z:\home\one\www\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(270): CController->missingAction('updateComments')
+#1 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('updateComments')
+#2 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/updateComm...')
+#3 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 Z:\home\one\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/news/updateComments
+HTTP_REFERER=http://one/news/6
+---
+2017/01/15 11:36:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "update".' in Z:\home\one\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('update')
+#1 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 Z:\home\one\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/update
+HTTP_REFERER=http://one/news/6
+---
+2017/01/15 11:36:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "update".' in Z:\home\one\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('update')
+#1 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 Z:\home\one\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/update
+HTTP_REFERER=http://one/news/6
+---
+2017/01/15 11:36:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "update".' in Z:\home\one\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('update')
+#1 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 Z:\home\one\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/update
+HTTP_REFERER=http://one/news/6
+---
+2017/01/15 11:41:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "actionUpdateComments".' in Z:\home\one\www\framework\web\CController.php:483
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(270): CController->missingAction('actionUpdateCom...')
+#1 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('actionUpdateCom...')
+#2 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/actionUpda...')
+#3 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 Z:\home\one\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/news/actionUpdateComments
+HTTP_REFERER=http://one/news/6
+---
+2017/01/15 12:12:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in Z:\home\one\www\framework\web\CController.php:336
+Stack trace:
+#0 Z:\home\one\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 Z:\home\one\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 Z:\home\one\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 Z:\home\one\www\framework\web\CWebApplication.php(282): CController->run('updateComments')
+#4 Z:\home\one\www\framework\web\CWebApplication.php(141): CWebApplication->runController('news/updateComm...')
+#5 Z:\home\one\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 Z:\home\one\www\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/news/updateComments
+HTTP_REFERER=http://one/news/6
+---
